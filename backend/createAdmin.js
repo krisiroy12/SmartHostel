@@ -9,7 +9,7 @@ async function createAdmin() {
     await mongoose.connect(process.env.MONGODB_URI);
 
     const existingAdmin = await Admin.findOne({
-      email: "admin@smarthostel.com",
+      email: "admin@SmartHostel.com",
     });
 
     if (existingAdmin) {
@@ -24,14 +24,14 @@ async function createAdmin() {
 
     const admin = new Admin({
       name: "SmartHostel Admin",
-      email: "admin@smarthostel.com",
+      email: "admin@SmartHostel.com",
       password: hashedPassword,
     });
 
     await admin.save();
 
     console.log("Admin created successfully ✅");
-    console.log("Email: admin@smarthostel.com");
+    console.log("Email: admin@SmartHostel.com");
     console.log("Password: Admin@123");
 
     process.exit();

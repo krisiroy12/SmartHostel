@@ -293,7 +293,7 @@ function Booking() {
 
         {/* FORM CARD */}
 
-        <div className="smarthostel-booking-card">
+        <div className="SmartHostel-booking-card">
 
           <form onSubmit={handleSubmit}>
 
