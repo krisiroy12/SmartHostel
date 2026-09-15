@@ -5426,3 +5426,4091 @@ footer p {
   }
 
 }
+/* =========================================
+   SMARTHOSTEL - GLOBAL UI POLISH
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Better selection */
+::selection {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef1f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8bfd1;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8f98b0;
+}
+
+
+/* =========================================
+   COMMON BUTTON POLISH
+   ========================================= */
+
+button {
+  font-family: inherit;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   COMMON CARD POLISH
+   ========================================= */
+
+.warden-stat-card,
+.warden-application-card,
+.warden-room-card,
+.hostel-page .floor-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =========================================
+   ACCESSIBILITY / FOCUS
+   ========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.25);
+  outline-offset: 2px;
+}
+
+
+/* =========================================
+   SMOOTH PAGE FEEL
+   ========================================= */
+
+.warden-container,
+.hostel-content {
+  animation: pageFadeIn 0.45s ease;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   MOBILE SAFETY
+   ========================================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 650px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+/* =========================================
+   SMARTHOSTEL - NAVBAR PREMIUM POLISH
+   ========================================= */
+
+.dashboard-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  min-height: 68px;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid #e7eaf1;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+/* Logo / Brand */
+.dashboard-nav .logo,
+.dashboard-nav .brand,
+.dashboard-nav h1 {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Navigation links */
+.dashboard-nav a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dashboard-nav a:hover {
+  color: #4f46e5;
+}
+
+/* Underline animation */
+.dashboard-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: #4f46e5;
+  border-radius: 10px;
+
+  transition: width 0.25s ease;
+}
+
+.dashboard-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   HOSTEL PAGE HEADER
+   ========================================= */
+
+.hostel-heading {
+  position: relative;
+}
+
+.hostel-heading h1 {
+  margin-bottom: 8px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.hostel-heading p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   FLOOR CARD PREMIUM EFFECT
+   ========================================= */
+
+.hostel-page .floor-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #e8ebf2;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.hostel-page .floor-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: #4f46e5;
+
+  transform: scaleY(0);
+  transform-origin: bottom;
+
+  transition: transform 0.25s ease;
+}
+
+.hostel-page .floor-card:hover {
+  transform: translateY(-5px);
+  border-color: #cfd3ff;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.10);
+}
+
+.hostel-page .floor-card:hover::before {
+  transform: scaleY(1);
+}
+
+
+/* =========================================
+   FLOOR NUMBER
+   ========================================= */
+
+.floor-number {
+  transition: transform 0.25s ease;
+}
+
+.hostel-page .floor-card:hover .floor-number {
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   WARDEN HERO
+   ========================================= */
+
+.warden-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.warden-hero::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+
+  right: -80px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(79, 70, 229, 0.07);
+  pointer-events: none;
+}
+
+.warden-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================
+   WARDEN STAT CARDS
+   ========================================= */
+
+.warden-stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.warden-stat-card::after {
+  content: "";
+
+  position: absolute;
+  right: -25px;
+  bottom: -35px;
+
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+
+  background: rgba(79, 70, 229, 0.05);
+
+  transition: transform 0.3s ease;
+}
+
+.warden-stat-card:hover::after {
+  transform: scale(1.4);
+}
+
+.warden-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.10);
+}
+/* =========================================
+   SMARTHOSTEL - WARDEN ROOM GRID POLISH
+   ========================================= */
+
+.warden-room-grid {
+  margin-top: 20px;
+  gap: 16px;
+}
+
+
+/* =========================================
+   ROOM CARD
+   ========================================= */
+
+.warden-room-card {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 125px;
+
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+
+  background: #ffffff;
+
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.warden-room-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 13px 28px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================
+   ROOM STATUS STRIP
+   ========================================= */
+
+.warden-room-card::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  transform: scaleY(0);
+  transform-origin: bottom;
+
+  transition: transform 0.25s ease;
+}
+
+.warden-room-card:hover::before {
+  transform: scaleY(1);
+}
+
+
+/* Available */
+.warden-room-card.room-available::before {
+  background: #16a34a;
+}
+
+/* Occupied */
+.warden-room-card.room-occupied::before {
+  background: #ef4444;
+}
+
+/* Pending */
+.warden-room-card.room-pending::before {
+  background: #f59e0b;
+}
+
+
+/* =========================================
+   ROOM TOP
+   ========================================= */
+
+.room-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.room-number {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+
+/* =========================================
+   STATUS DOT
+   ========================================= */
+
+.room-status-dot {
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.04);
+}
+
+.room-available .room-status-dot {
+  background: #22c55e;
+}
+
+.room-occupied .room-status-dot {
+  background: #ef4444;
+}
+
+.room-pending .room-status-dot {
+  background: #f59e0b;
+}
+
+
+/* =========================================
+   ROOM STATUS TEXT
+   ========================================= */
+
+.room-card-status {
+  margin-top: 8px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  color: #64748b;
+}
+
+.room-available .room-card-status {
+  color: #15803d;
+}
+
+.room-occupied .room-card-status {
+  color: #dc2626;
+}
+
+.room-pending .room-card-status {
+  color: #b45309;
+}
+
+
+/* =========================================
+   ROOM BOTTOM
+   ========================================= */
+
+.room-card-bottom {
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+
+/* =========================================
+   ROOM DETAILS MODAL
+   ========================================= */
+
+.room-details-modal {
+  width: min(520px, calc(100% - 30px));
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.20);
+
+  animation: roomModalIn 0.25s ease;
+}
+
+@keyframes roomModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================
+   ROOM MODAL STATUS
+   ========================================= */
+
+.room-modal-status {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+
+/* =========================================
+   VIEW BOOKING BUTTON
+   ========================================= */
+
+.room-view-booking {
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 10px 16px;
+
+  background: #4f46e5;
+  color: #ffffff;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.room-view-booking:hover {
+  background: #4338ca;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+
+/* =========================================
+   EMPTY ROOM STATE
+   ========================================= */
+
+.room-empty-state {
+  padding: 28px 20px;
+
+  border-radius: 14px;
+
+  background: #f8fafc;
+
+  border: 1px dashed #d7dce8;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+
+/* =========================================
+   RESPONSIVE ROOM GRID
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .warden-room-grid {
+    gap: 12px;
+  }
+
+  .warden-room-card {
+    min-height: 115px;
+    border-radius: 14px;
+  }
+
+  .room-number {
+    font-size: 1rem;
+  }
+
+  .room-card-bottom {
+    margin-top: 12px;
+    font-size: 0.75rem;
+  }
+}
+/* =========================================
+   SMARTHOSTEL - WARDEN MODAL POLISH
+   ========================================= */
+
+.warden-modal-overlay {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  animation: overlayFade 0.2s ease;
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   MAIN MODAL
+   ========================================= */
+
+.warden-modal {
+  width: min(620px, calc(100% - 30px));
+
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e7eaf1;
+  border-radius: 22px;
+
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.22);
+
+  animation: modalPremiumIn 0.28s ease;
+}
+
+@keyframes modalPremiumIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================
+   MODAL HEADER
+   ========================================= */
+
+.warden-modal-header {
+  padding: 20px 22px;
+
+  border-bottom: 1px solid #eef0f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.warden-modal-header h2,
+.warden-modal-header h3 {
+  margin: 0;
+
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+   ========================================= */
+
+.modal-close {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+
+  background: #f8fafc;
+  color: #475569;
+
+  font-size: 1.15rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #fee2e2;
+  color: #dc2626;
+
+  transform: rotate(5deg);
+}
+
+
+/* =========================================
+   STUDENT HEADER
+   ========================================= */
+
+.modal-student {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px 22px;
+
+  background: #f8f9ff;
+}
+
+.modal-avatar {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+  color: #4f46e5;
+
+  border: 2px solid #dfe4ff;
+
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.modal-details {
+  display: grid;
+
+  gap: 12px;
+
+  padding: 20px 22px;
+}
+
+.modal-contact {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   DOCUMENT SECTION
+   ========================================= */
+
+.modal-document {
+  margin: 0 22px 20px;
+
+  padding: 15px;
+
+  border: 1px solid #e7eaf1;
+  border-radius: 13px;
+
+  background: #fafbfc;
+}
+
+.modal-document:hover {
+  border-color: #cfd4e2;
+}
+
+
+/* =========================================
+   MODAL ACTIONS
+   ========================================= */
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+
+  padding: 18px 22px;
+
+  border-top: 1px solid #eef0f5;
+}
+
+.modal-actions button {
+  flex: 1;
+
+  min-height: 44px;
+
+  border: none;
+  border-radius: 11px;
+
+  font-family: inherit;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.modal-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.modal-actions button:active {
+  transform: translateY(0);
+}
+
+
+/* Reject */
+.modal-reject {
+  background: #fef2f2;
+  color: #dc2626;
+
+  border: 1px solid #fecaca !important;
+}
+
+.modal-reject:hover {
+  background: #fee2e2;
+
+  box-shadow: 0 7px 18px rgba(220, 38, 38, 0.12);
+}
+
+
+/* Approve */
+.modal-approve {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.modal-approve:hover {
+  background: #15803d;
+
+  box-shadow: 0 7px 18px rgba(22, 163, 74, 0.20);
+}
+
+
+/* =========================================
+   LOADING STATE
+   ========================================= */
+
+.warden-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 180px;
+
+  color: #64748b;
+}
+
+.warden-loader {
+  width: 34px;
+  height: 34px;
+
+  border: 3px solid #e5e7eb;
+  border-top-color: #4f46e5;
+
+  border-radius: 50%;
+
+  animation: loadingSpin 0.75s linear infinite;
+}
+
+@keyframes loadingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   MODAL MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .warden-modal {
+    width: calc(100% - 22px);
+
+    max-height: calc(100vh - 22px);
+
+    border-radius: 17px;
+  }
+
+  .warden-modal-header {
+    padding: 16px;
+  }
+
+  .modal-student {
+    padding: 16px;
+  }
+
+  .modal-details {
+    padding: 16px;
+  }
+
+  .modal-document {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .modal-actions {
+    padding: 15px 16px;
+
+    flex-direction: column;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
+/* =========================================
+   SMARTHOSTEL - STUDENT DASHBOARD POLISH
+   ========================================= */
+
+/* Main dashboard background */
+.dashboard-container {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+
+/* =========================================
+   DASHBOARD HERO / WELCOME
+   ========================================= */
+
+.dashboard-hero {
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 28px;
+
+  border-radius: 22px;
+
+  background: linear-gradient(
+    135deg,
+    #eef2ff 0%,
+    #ffffff 55%,
+    #f8fafc 100%
+  );
+
+  border: 1px solid #e3e7f3;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.dashboard-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -80px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(79, 70, 229, 0.08);
+}
+
+.dashboard-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: 100px;
+  bottom: -75px;
+
+  border-radius: 50%;
+
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.dashboard-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================
+   WELCOME TEXT
+   ========================================= */
+
+.dashboard-hero h1 {
+  margin: 0;
+
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+
+  font-weight: 850;
+
+  letter-spacing: -0.9px;
+
+  color: #172033;
+}
+
+.dashboard-hero p {
+  margin-top: 9px;
+
+  color: #64748b;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   DASHBOARD CARDS
+   ========================================= */
+
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e7eaf1;
+
+  border-radius: 18px;
+
+  box-shadow: 0 7px 22px rgba(15, 23, 42, 0.055);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #d9dcff;
+
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================
+   HOSTEL CARDS
+   ========================================= */
+
+.hostel-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e7eaf1;
+
+  border-radius: 18px;
+
+  box-shadow: 0 7px 22px rgba(15, 23, 42, 0.055);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hostel-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: #4f46e5;
+
+  transform: scaleY(0);
+
+  transform-origin: bottom;
+
+  transition: transform 0.25s ease;
+}
+
+.hostel-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #cfd4ff;
+
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.10);
+}
+
+.hostel-card:hover::before {
+  transform: scaleY(1);
+}
+
+
+/* =========================================
+   BOOKING STATUS
+   ========================================= */
+
+.booking-status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+
+  font-weight: 750;
+}
+
+.booking-status.pending {
+  background: #fff7df;
+  color: #a16207;
+
+  border: 1px solid #fde68a;
+}
+
+.booking-status.approved,
+.booking-status.confirmed {
+  background: #ecfdf3;
+  color: #15803d;
+
+  border: 1px solid #bbf7d0;
+}
+
+.booking-status.rejected {
+  background: #fef2f2;
+  color: #dc2626;
+
+  border: 1px solid #fecaca;
+}
+
+
+/* =========================================
+   PRIMARY ACTION BUTTON
+   ========================================= */
+
+.dashboard-card button,
+.hostel-card button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.dashboard-card button:hover,
+.hostel-card button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+   ========================================= */
+
+.dashboard-section h2,
+.dashboard-section h3 {
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+
+  color: #172033;
+}
+
+.dashboard-section p {
+  color: #64748b;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .dashboard-hero {
+    border-radius: 17px;
+
+    margin-bottom: 20px;
+  }
+
+  .dashboard-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .dashboard-card,
+  .hostel-card {
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .dashboard-hero {
+    border-radius: 14px;
+  }
+
+  .dashboard-hero h1 {
+    font-size: 1.5rem;
+  }
+}/* =========================================
+   SMARTHOSTEL - STUDENT DASHBOARD POLISH
+   ========================================= */
+
+/* ---------- Main Dashboard ---------- */
+
+.dashboard {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+
+/* ---------- Main Content ---------- */
+
+.dashboard-content {
+  width: min(1250px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 35px 0 50px;
+}
+
+
+/* ---------- Welcome Section ---------- */
+
+.student-welcome {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 32px;
+
+  margin-bottom: 25px;
+
+  border-radius: 22px;
+
+  background: linear-gradient(
+    135deg,
+    #eef2ff,
+    #ffffff 65%
+  );
+
+  border: 1px solid #e0e5f5;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.student-welcome::after {
+  content: "";
+
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  right: -80px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(79, 70, 229, 0.07);
+
+  pointer-events: none;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+}
+
+.section-label {
+  margin: 0 0 8px;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+
+  color: #6366f1;
+}
+
+.student-welcome h1 {
+  margin: 0;
+
+  font-size: clamp(1.8rem, 4vw, 2.55rem);
+
+  line-height: 1.2;
+
+  font-weight: 850;
+
+  letter-spacing: -1px;
+
+  color: #172033;
+}
+
+.welcome-description {
+  max-width: 650px;
+
+  margin: 10px 0 0;
+
+  color: #64748b;
+
+  line-height: 1.65;
+}
+
+
+/* ---------- Refresh Button ---------- */
+
+.refresh-dashboard-btn {
+  position: relative;
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  border: 1px solid #d9ddf7;
+
+  border-radius: 11px;
+
+  padding: 11px 17px;
+
+  background: #ffffff;
+
+  color: #4f46e5;
+
+  font-family: inherit;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.refresh-dashboard-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
+}
+
+
+/* ---------- Stats ---------- */
+
+.student-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 25px;
+}
+
+.student-stat-card {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7eaf1;
+
+  border-radius: 17px;
+
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.student-stat-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #d8dcff;
+
+  box-shadow: 0 13px 30px rgba(15, 23, 42, 0.09);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #f1f3ff;
+
+  font-size: 1.35rem;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.stat-content span {
+  font-size: 0.76rem;
+
+  color: #64748b;
+
+  font-weight: 600;
+}
+
+.stat-content strong {
+  font-size: 1.05rem;
+
+  color: #172033;
+
+  font-weight: 800;
+}
+
+
+/* ---------- Main Grid ---------- */
+
+.student-dashboard-grid {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+
+  gap: 22px;
+
+  align-items: start;
+
+  margin-bottom: 28px;
+}
+
+
+/* ---------- Booking Card ---------- */
+
+.student-booking-card,
+.student-profile-card {
+  background: #ffffff;
+
+  border: 1px solid #e7eaf1;
+
+  border-radius: 20px;
+
+  box-shadow: 0 7px 24px rgba(15, 23, 42, 0.055);
+}
+
+.student-booking-card {
+  overflow: hidden;
+}
+
+.student-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid #eef0f5;
+}
+
+.student-card-heading h2 {
+  margin: 0;
+
+  font-size: 1.3rem;
+
+  font-weight: 800;
+
+  color: #172033;
+}
+
+
+/* ---------- Status Badge ---------- */
+
+.booking-status-badge {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.booking-status-badge.status-pending {
+  background: #fff7df;
+  color: #a16207;
+  border: 1px solid #fde68a;
+}
+
+.booking-status-badge.status-confirmed {
+  background: #ecfdf3;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.booking-status-badge.status-rejected {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+
+/* ---------- Booking Content ---------- */
+
+.booking-content {
+  padding: 24px;
+}
+
+
+/* ---------- Room Summary ---------- */
+
+.room-summary {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 18px;
+
+  border-radius: 15px;
+
+  background: #f8f9ff;
+
+  border: 1px solid #e4e7f7;
+
+  margin-bottom: 20px;
+}
+
+.room-summary-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #eef2ff;
+
+  font-size: 1.4rem;
+}
+
+.room-summary-info span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.9px;
+
+  color: #6366f1;
+}
+
+.room-summary-info h2 {
+  margin: 0;
+
+  font-size: 1.35rem;
+
+  font-weight: 850;
+
+  color: #172033;
+}
+
+.room-summary-info p {
+  margin: 4px 0 0;
+
+  color: #64748b;
+
+  font-size: 0.88rem;
+}
+
+
+/* ---------- Details Grid ---------- */
+
+.booking-details-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1px;
+
+  overflow: hidden;
+
+  border: 1px solid #e8ebf1;
+
+  border-radius: 14px;
+
+  background: #e8ebf1;
+
+  margin-bottom: 18px;
+}
+
+.booking-detail-item {
+  padding: 15px;
+
+  background: #ffffff;
+}
+
+.booking-detail-item span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 0.67rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  color: #94a3b8;
+}
+
+.booking-detail-item strong {
+  font-size: 0.9rem;
+
+  color: #334155;
+
+  word-break: break-word;
+}
+
+
+/* ---------- Document ---------- */
+
+.document-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 14px 16px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid #e7eaf1;
+
+  border-radius: 14px;
+
+  background: #fafbfc;
+}
+
+.document-left {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.document-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eef2ff;
+
+  font-size: 1.1rem;
+}
+
+.document-left strong {
+  color: #334155;
+
+  font-size: 0.88rem;
+}
+
+.document-left p {
+  margin: 3px 0 0;
+
+  color: #64748b;
+
+  font-size: 0.76rem;
+}
+
+.document-view-btn {
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 9px;
+
+  padding: 8px 13px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-family: inherit;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.document-view-btn:hover {
+  background: #4f46e5;
+
+  color: #ffffff;
+}
+
+
+/* ---------- Booking Messages ---------- */
+
+.booking-message {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  border-radius: 13px;
+
+  line-height: 1.5;
+}
+
+.booking-message > span {
+  font-size: 1.15rem;
+}
+
+.booking-message strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 0.88rem;
+}
+
+.booking-message p {
+  margin: 0;
+
+  font-size: 0.78rem;
+
+  color: #64748b;
+}
+
+.pending-message {
+  background: #fffbeb;
+
+  border: 1px solid #fde68a;
+}
+
+.confirmed-message {
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+}
+
+.rejected-message {
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+}
+
+
+/* ---------- No Booking ---------- */
+
+.no-booking {
+  padding: 55px 25px;
+
+  text-align: center;
+}
+
+.no-booking-icon {
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: #eef2ff;
+
+  font-size: 1.8rem;
+}
+
+.no-booking h3 {
+  margin: 0 0 7px;
+
+  color: #172033;
+
+  font-size: 1.2rem;
+}
+
+.no-booking p {
+  max-width: 420px;
+
+  margin: 0 auto 20px;
+
+  color: #64748b;
+
+  line-height: 1.6;
+
+  font-size: 0.88rem;
+}
+
+.no-booking button {
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 11px 17px;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.no-booking button:hover {
+  background: #4338ca;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
+}
+
+
+/* ---------- Profile Card ---------- */
+
+.student-profile-card {
+  padding: 22px;
+
+  position: sticky;
+
+  top: 88px;
+}
+
+.profile-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #eef0f5;
+}
+
+.large-student-avatar {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  border: 2px solid #dfe4ff;
+
+  font-size: 1.15rem;
+
+  font-weight: 850;
+}
+
+.profile-heading h2 {
+  margin: 0;
+
+  font-size: 1.1rem;
+
+  font-weight: 800;
+
+  color: #172033;
+}
+
+.profile-details {
+  padding: 8px 0;
+}
+
+.profile-row {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #f0f2f6;
+}
+
+.profile-row span {
+  font-size: 0.76rem;
+
+  color: #64748b;
+}
+
+.profile-row strong {
+  font-size: 0.84rem;
+
+  color: #334155;
+
+  word-break: break-word;
+}
+
+.profile-room-btn {
+  width: 100%;
+
+  margin-top: 14px;
+
+  padding: 11px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.profile-room-btn:hover {
+  background: #4338ca;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
+}
+
+
+/* ---------- Booking Process ---------- */
+
+.booking-process {
+  padding: 28px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7eaf1;
+
+  border-radius: 20px;
+
+  box-shadow: 0 7px 24px rgba(15, 23, 42, 0.05);
+}
+
+.process-heading {
+  margin-bottom: 25px;
+}
+
+.process-heading h2 {
+  margin: 0;
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+
+  color: #172033;
+}
+
+.process-heading > p:last-child {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 0.85rem;
+}
+
+.process-steps {
+  display: flex;
+  align-items: center;
+}
+
+.process-step {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.process-number {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-weight: 850;
+
+  border: 1px solid #dfe4ff;
+}
+
+.process-step h3 {
+  margin: 0 0 3px;
+
+  font-size: 0.85rem;
+
+  color: #334155;
+}
+
+.process-step p {
+  margin: 0;
+
+  font-size: 0.7rem;
+
+  color: #64748b;
+
+  line-height: 1.4;
+}
+
+.process-line {
+  flex: 0 0 35px;
+
+  height: 1px;
+
+  margin: 0 8px;
+
+  background: #dfe3ec;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .student-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-profile-card {
+    position: static;
+  }
+
+  .process-steps {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+  .process-line {
+    width: 1px;
+    height: 15px;
+
+    flex: none;
+
+    margin-left: 18px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .dashboard-content {
+    width: min(100% - 24px, 600px);
+
+    padding-top: 20px;
+  }
+
+  .student-welcome {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 23px;
+
+    border-radius: 17px;
+  }
+
+  .refresh-dashboard-btn {
+    width: 100%;
+  }
+
+  .student-stats {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .student-card-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 18px;
+  }
+
+  .booking-content {
+    padding: 18px;
+  }
+
+  .booking-process {
+    padding: 20px;
+
+    border-radius: 17px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .dashboard-content {
+    width: calc(100% - 18px);
+
+    padding-bottom: 30px;
+  }
+
+  .student-welcome {
+    padding: 20px;
+  }
+
+  .student-welcome h1 {
+    font-size: 1.55rem;
+  }
+
+  .booking-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-summary {
+    align-items: flex-start;
+
+    padding: 15px;
+  }
+
+  .room-summary-info h2 {
+    font-size: 1.15rem;
+  }
+
+  .document-status {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .document-view-btn {
+    width: 100%;
+  }
+}
+/* =========================================
+   SMARTHOSTEL - ROOM SELECTION POLISH
+   ========================================= */
+
+/* Room selection page */
+.room-selection-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+
+/* Page content */
+.room-selection-page .room-content {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 32px 0 50px;
+}
+
+
+/* =========================================
+   ROOM PAGE HEADER
+   ========================================= */
+
+.room-selection-page .room-heading {
+  margin-bottom: 24px;
+}
+
+.room-selection-page .room-heading h1 {
+  margin: 0;
+
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+
+  font-weight: 850;
+  letter-spacing: -0.8px;
+
+  color: #172033;
+}
+
+.room-selection-page .room-heading p {
+  margin: 8px 0 0;
+
+  color: #64748b;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   ROOM LEGEND
+   ========================================= */
+
+.room-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px 18px;
+
+  padding: 15px 18px;
+
+  margin-bottom: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7eaf1;
+
+  border-radius: 14px;
+
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.04);
+}
+
+.room-legend-item {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #475569;
+
+  font-size: 0.8rem;
+
+  font-weight: 650;
+}
+
+.room-legend-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   ROOM CARDS
+   ========================================= */
+
+.room-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.room-card:not(.occupied):not(.booked):hover {
+  transform: translateY(-5px);
+
+  border-color: #cfd4ff;
+
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.10);
+}
+
+
+/* Available room */
+.room-card.available {
+  cursor: pointer;
+}
+
+.room-card.available::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: #16a34a;
+
+  transform: scaleY(0);
+
+  transform-origin: bottom;
+
+  transition: transform 0.25s ease;
+}
+
+.room-card.available:hover::before {
+  transform: scaleY(1);
+}
+
+
+/* Occupied / unavailable */
+.room-card.occupied,
+.room-card.booked {
+  opacity: 0.72;
+
+  cursor: not-allowed;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================
+   ROOM NUMBER
+   ========================================= */
+
+.room-card .room-number {
+  font-size: 1.15rem;
+
+  font-weight: 850;
+
+  color: #172033;
+}
+
+.room-card.available .room-number {
+  color: #15803d;
+}
+
+.room-card.occupied .room-number,
+.room-card.booked .room-number {
+  color: #64748b;
+}
+
+
+/* =========================================
+   ROOM STATUS
+   ========================================= */
+
+.room-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+}
+
+.room-card.available .room-status {
+  background: #ecfdf3;
+  color: #15803d;
+
+  border: 1px solid #bbf7d0;
+}
+
+.room-card.occupied .room-status,
+.room-card.booked .room-status {
+  background: #f1f5f9;
+  color: #64748b;
+
+  border: 1px solid #e2e8f0;
+}
+
+
+/* =========================================
+   SELECTED ROOM
+   ========================================= */
+
+.room-card.selected {
+  border: 2px solid #4f46e5;
+
+  background: #f8f9ff;
+
+  box-shadow:
+    0 0 0 4px rgba(79, 70, 229, 0.10),
+    0 14px 32px rgba(79, 70, 229, 0.12);
+
+  transform: translateY(-3px);
+}
+
+.room-card.selected::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background: #4f46e5;
+}
+
+
+/* =========================================
+   BOOK / SELECT BUTTON
+   ========================================= */
+
+.room-select-btn {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 10px 14px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.room-select-btn:hover {
+  background: #4338ca;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.22);
+}
+
+
+/* =========================================
+   ROOM GRID MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .room-selection-page .room-content {
+    width: calc(100% - 24px);
+
+    padding-top: 22px;
+  }
+
+  .room-legend {
+    gap: 9px 14px;
+
+    padding: 13px;
+  }
+
+  .room-card {
+    border-radius: 14px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .room-selection-page .room-content {
+    width: calc(100% - 16px);
+  }
+
+  .room-selection-page .room-heading h1 {
+    font-size: 1.65rem;
+  }
+
+  .room-legend {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* =========================================================
+   BOOKING CARD - WIDTH FIX
+   ========================================================= */
+
+.booking-container {
+  width: min(1080px, 92%);
+  max-width: 1080px;
+}
+
+/* Room summary and form must have EXACT same width */
+.booking-room-summary,
+.SmartHostel-booking-card {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Form card should use the complete container */
+.SmartHostel-booking-card {
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+/* Make the form itself full width */
+.SmartHostel-booking-card form {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Sections use complete card width */
+.SmartHostel-booking-card .form-section {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Desktop */
+@media (min-width: 701px) {
+  .booking-container {
+    width: min(1080px, 92%);
+    max-width: 1080px;
+  }
+
+  .booking-room-summary,
+  .SmartHostel-booking-card {
+    width: 100% !important;
+  }
+}
+/* =========================================================
+   SMART HOSTEL - FLOOR 1 / ROOM SELECTION
+   Compact Premium UI
+   ========================================================= */
+
+.floor-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(99, 102, 241, 0.07),
+      transparent 28%
+    ),
+    #f7f9fc;
+  color: #172033;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.floor-page .dashboard-nav {
+  height: 64px;
+  padding: 0 6%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #e5e9f0;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.floor-page .dashboard-nav h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.floor-page .dashboard-nav button {
+  padding: 9px 15px;
+
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+
+  background: #fff;
+  color: #475569;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.floor-page .dashboard-nav button:hover {
+  border-color: #6366f1;
+  color: #4f46e5;
+  background: #f8f7ff;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+.floor-content {
+  width: min(1080px, 92%);
+  margin: 0 auto;
+  padding: 34px 0 45px;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.floor-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+
+  margin-bottom: 18px;
+}
+
+.floor-eyebrow {
+  margin: 0 0 6px;
+
+  color: #4f46e5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.floor-header h1 {
+  margin: 0;
+
+  color: #111827;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.floor-header > div > p:last-child {
+  margin: 7px 0 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+.refresh-btn {
+  flex-shrink: 0;
+
+  padding: 9px 14px;
+
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+
+  background: #fff;
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.refresh-btn:hover {
+  border-color: #6366f1;
+  color: #4f46e5;
+  background: #f8f7ff;
+}
+
+/* =========================
+   LEGEND
+   ========================= */
+
+.room-legend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 13px;
+
+  padding: 10px 14px;
+
+  background: #ffffff;
+  border: 1px solid #e3e7ee;
+  border-radius: 10px;
+
+  width: fit-content;
+}
+
+.room-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+}
+
+/* Actual legend status colors */
+
+.legend-dot.available {
+  background: #22c55e;
+}
+
+.legend-dot.partial {
+  background: #f59e0b;
+}
+
+.legend-dot.full {
+  background: #ef4444;
+}
+
+/* =========================
+   FLOOR MAP CARD
+   ========================= */
+
+.floor-map {
+  padding: 20px;
+
+  background: #ffffff;
+  border: 1px solid #dfe5ee;
+  border-radius: 16px;
+
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.045);
+}
+
+/* =========================
+   MAP HEADER
+   ========================= */
+
+.floor-map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 15px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.floor-map-header > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.floor-map-header span {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.floor-map-header small {
+  padding-left: 9px;
+
+  border-left: 1px solid #dce1e8;
+
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.entrance {
+  padding: 6px 10px;
+
+  border: 1px solid #e2e7ef;
+  border-radius: 7px;
+
+  background: #f8fafc;
+  color: #64748b;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================
+   CORRIDOR
+   ========================= */
+
+.corridor {
+  height: 30px;
+
+  margin: 14px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #f1f5f9 0,
+      #f1f5f9 35px,
+      #e9eef4 35px,
+      #e9eef4 70px
+    );
+
+  border: 1px solid #e5e9ef;
+}
+
+.corridor span {
+  padding: 3px 9px;
+
+  border-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #94a3b8;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   ROOM GRID
+   ========================= */
+
+.room-map-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(95px, 1fr));
+
+  gap: 12px;
+
+  padding: 5px 3px 15px;
+}
+
+/* =========================
+   ROOM CARD
+   ========================= */
+
+.hostel-room {
+  min-height: 105px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 12px 8px;
+
+  border: 1px solid #dfe5ec;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Room number */
+
+.room-number {
+  color: #172033;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* Bed icon */
+
+.room-bed-icon {
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* Capacity */
+
+.room-capacity {
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* State */
+
+.room-state {
+  padding: 3px 7px;
+
+  border-radius: 999px;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   AVAILABLE
+   ========================= */
+
+.hostel-room.room-is-available {
+  border-color: #bbf7d0;
+  background: #f7fff9;
+}
+
+.hostel-room.room-is-available .room-state {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.hostel-room.room-is-available:hover {
+  border-color: #22c55e;
+
+  box-shadow:
+    0 7px 18px rgba(34, 197, 94, 0.13);
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   PARTIAL
+   ========================= */
+
+.hostel-room.room-is-partial {
+  border-color: #fde68a;
+  background: #fffdf5;
+}
+
+.hostel-room.room-is-partial .room-state {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.hostel-room.room-is-partial:hover {
+  border-color: #f59e0b;
+
+  box-shadow:
+    0 7px 18px rgba(245, 158, 11, 0.13);
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FULL
+   ========================= */
+
+.hostel-room.room-is-full {
+  border-color: #fecaca;
+  background: #fff8f8;
+
+  cursor: not-allowed;
+}
+
+.hostel-room.room-is-full .room-state {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.hostel-room.room-is-full .room-number,
+.hostel-room.room-is-full .room-bed-icon {
+  opacity: 0.55;
+}
+
+/* =========================
+   SELECTED ROOM
+   ========================= */
+
+.hostel-room.room-selected {
+  border: 2px solid #4f46e5;
+  background: #f5f3ff;
+
+  box-shadow:
+    0 7px 20px rgba(79, 70, 229, 0.16);
+
+  transform: translateY(-2px);
+}
+
+.hostel-room.room-selected .room-number {
+  color: #4f46e5;
+}
+
+.hostel-room.room-selected .room-state {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+/* =========================
+   SELECTED ROOM BAR
+   ========================= */
+
+.selected-room-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 13px 15px;
+
+  border: 1px solid #c7d2fe;
+  border-radius: 11px;
+
+  background: #f5f3ff;
+}
+
+.selected-room-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selected-room-bar span {
+  color: #6366f1;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.selected-room-bar strong {
+  color: #172033;
+  font-size: 14px;
+}
+
+.selected-room-bar small {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.selected-room-bar button {
+  height: 38px;
+
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #4f46e5;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.selected-room-bar button:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   EXIT
+   ========================= */
+
+.floor-exit {
+  width: fit-content;
+
+  margin: 14px auto 0;
+  padding: 5px 10px;
+
+  border: 1px solid #e2e7ef;
+  border-radius: 6px;
+
+  background: #f8fafc;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+/* =========================
+   LOADING
+   ========================= */
+
+.room-loading {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.room-loading p {
+  margin: 0;
+
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.loader {
+  width: 27px;
+  height: 27px;
+
+  border: 3px solid #e5e7eb;
+  border-top-color: #4f46e5;
+
+  border-radius: 50%;
+
+  animation: roomLoader 0.8s linear infinite;
+}
+
+@keyframes roomLoader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   INFO BOX
+   ========================= */
+
+.room-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  margin-top: 14px;
+  padding: 13px 15px;
+
+  border: 1px solid #e0e7ff;
+  border-radius: 11px;
+
+  background: #f8f9ff;
+}
+
+.info-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #eef2ff;
+
+  font-size: 14px;
+}
+
+.room-info-box strong {
+  display: block;
+
+  color: #334155;
+  font-size: 11px;
+}
+
+.room-info-box p {
+  margin: 3px 0 0;
+
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .room-map-grid {
+    grid-template-columns:
+      repeat(4, minmax(85px, 1fr));
+  }
+
+  .form-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .floor-page .dashboard-nav {
+    height: 58px;
+    padding: 0 4%;
+  }
+
+  .floor-page .dashboard-nav h2 {
+    font-size: 19px;
+  }
+
+  .floor-content {
+    width: 92%;
+    padding: 27px 0 35px;
+  }
+
+  .floor-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .floor-header h1 {
+    font-size: 29px;
+  }
+
+  .refresh-btn {
+    align-self: flex-start;
+  }
+
+  .room-legend {
+    width: auto;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .floor-map {
+    padding: 13px;
+    border-radius: 13px;
+  }
+
+  .room-map-grid {
+    grid-template-columns:
+      repeat(3, minmax(75px, 1fr));
+
+    gap: 8px;
+  }
+
+  .hostel-room {
+    min-height: 92px;
+  }
+
+  .selected-room-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .selected-room-bar > div {
+    flex-wrap: wrap;
+  }
+
+  .selected-room-bar button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .room-map-grid {
+    grid-template-columns:
+      repeat(2, minmax(100px, 1fr));
+  }
+
+  .room-legend {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .floor-map-header {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+/* =========================================================
+   HOSTEL A - FINAL UI POLISH
+   ========================================================= */
+
+.hostel-page {
+  min-height: 100vh;
+  background: #f6f8fc;
+}
+
+/* ---------- Hostel Content ---------- */
+
+.hostel-content {
+  width: min(1050px, 92%);
+  margin: 0 auto;
+  padding: 55px 0 70px;
+}
+
+/* ---------- Heading ---------- */
+
+.hostel-heading {
+  margin-bottom: 34px;
+}
+
+.hostel-heading .section-label {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #6366f1;
+}
+
+.hostel-heading h1 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #111827;
+}
+
+.hostel-heading > p:last-child {
+  margin: 12px 0 0;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* ---------- Floor List ---------- */
+
+.floor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- Floor Card ---------- */
+
+.hostel-page .floor-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  min-height: 105px;
+  padding: 20px 24px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.hostel-page .floor-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #6366f1;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.hostel-page .floor-card:hover {
+  transform: translateY(-4px);
+  border-color: #c7d2fe;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.09);
+}
+
+.hostel-page .floor-card:hover::before {
+  transform: scaleY(1);
+}
+
+/* ---------- Floor Number ---------- */
+
+.hostel-page .floor-number {
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+  background: #eef2ff;
+  color: #4f46e5;
+
+  font-size: 23px;
+  font-weight: 800;
+
+  transition:
+    background 0.22s ease,
+    transform 0.22s ease;
+}
+
+.hostel-page .floor-card:hover .floor-number {
+  background: #e0e7ff;
+  transform: scale(1.04);
+}
+
+/* ---------- Floor Info ---------- */
+
+.hostel-page .floor-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.hostel-page .floor-info h2 {
+  margin: 0 0 5px;
+  color: #111827;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.hostel-page .floor-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ---------- Availability ---------- */
+
+.hostel-page .floor-availability {
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.hostel-page .floor-availability strong {
+  color: #16a34a;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.hostel-page .floor-availability span {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ---------- Arrow ---------- */
+
+.hostel-page .arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: #f3f4f6;
+  color: #4b5563;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.hostel-page .floor-card:hover .arrow {
+  background: #eef2ff;
+  color: #4f46e5;
+  transform: translateX(4px);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+  .hostel-content {
+    width: 92%;
+    padding: 38px 0 55px;
+  }
+
+  .hostel-heading {
+    margin-bottom: 25px;
+  }
+
+  .hostel-heading h1 {
+    font-size: 30px;
+  }
+
+  .hostel-heading > p:last-child {
+    font-size: 14px;
+  }
+
+  .hostel-page .floor-card {
+    gap: 15px;
+    min-height: 92px;
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+  .hostel-page .floor-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    font-size: 20px;
+  }
+
+  .hostel-page .floor-info h2 {
+    font-size: 17px;
+  }
+
+  .hostel-page .floor-info p {
+    font-size: 13px;
+  }
+
+  .hostel-page .floor-availability {
+    min-width: 65px;
+  }
+
+  .hostel-page .floor-availability strong {
+    font-size: 20px;
+  }
+
+  .hostel-page .floor-availability span {
+    font-size: 11px;
+  }
+
+  .hostel-page .arrow {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hostel-content {
+    padding-top: 30px;
+  }
+
+  .hostel-page .floor-card {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .hostel-page .floor-number {
+    width: 46px;
+    height: 46px;
+  }
+
+  .hostel-page .floor-availability {
+    min-width: 55px;
+  }
+
+  .hostel-page .arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 17px;
+  }
+}
+/* =========================================================
+   SMART HOSTEL - PREMIUM STUDENT LOGIN
+   ========================================================= */
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 20px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(79, 70, 229, 0.13), transparent 30%),
+    linear-gradient(135deg, #f8faff 0%, #eef2ff 100%);
+}
+
+/* Decorative background circles */
+
+.login-page::before,
+.login-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.login-page::before {
+  width: 280px;
+  height: 280px;
+  top: -110px;
+  left: -100px;
+  background: rgba(99, 102, 241, 0.10);
+}
+
+.login-page::after {
+  width: 330px;
+  height: 330px;
+  right: -130px;
+  bottom: -140px;
+  background: rgba(79, 70, 229, 0.09);
+}
+
+/* ---------- Login Card ---------- */
+
+.login-card {
+  position: relative;
+  z-index: 1;
+
+  width: min(430px, 100%);
+  box-sizing: border-box;
+
+  padding: 42px 42px 36px;
+
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 26px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.12),
+    0 5px 20px rgba(79, 70, 229, 0.05);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  animation: loginCardEnter 0.55s ease both;
+}
+
+@keyframes loginCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------- Brand ---------- */
+
+.login-card h1 {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 850;
+  letter-spacing: -1px;
+
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login-card > p:first-of-type {
+  margin: 9px 0 30px;
+
+  text-align: center;
+
+  color: #6b7280;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ---------- Form ---------- */
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ---------- Inputs ---------- */
+
+.login-card input {
+  width: 100%;
+  height: 54px;
+
+  box-sizing: border-box;
+
+  padding: 0 17px;
+
+  border: 1px solid #e2e5ec;
+  border-radius: 14px;
+
+  background: #f9fafb;
+
+  color: #111827;
+  font-size: 15px;
+  font-family: inherit;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.login-card input::placeholder {
+  color: #9ca3af;
+}
+
+.login-card input:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.login-card input:focus {
+  background: #ffffff;
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.10);
+
+  transform: translateY(-1px);
+}
+
+/* ---------- Login Button ---------- */
+
+.login-card button[type="submit"] {
+  width: 100%;
+  height: 54px;
+
+  margin-top: 5px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 750;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 22px rgba(79, 70, 229, 0.24);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.login-card button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 28px rgba(79, 70, 229, 0.30);
+}
+
+.login-card button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-card button[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* ---------- Register Text ---------- */
+
+.login-card > p:last-child {
+  margin-top: 24px !important;
+
+  text-align: center;
+
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.login-card > p:last-child span {
+  color: #4f46e5;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.login-card > p:last-child span:hover {
+  color: #3730a3;
+  opacity: 0.85;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 22px 16px;
+  }
+
+  .login-card {
+    padding: 34px 24px 28px;
+    border-radius: 22px;
+  }
+
+  .login-card h1 {
+    font-size: 29px;
+  }
+
+  .login-card > p:first-of-type {
+    margin-bottom: 26px;
+  }
+
+  .login-card input,
+  .login-card button[type="submit"] {
+    height: 52px;
+  }
+}
+
+@media (max-width: 380px) {
+  .login-card {
+    padding: 30px 20px 25px;
+  }
+
+  .login-card h1 {
+    font-size: 27px;
+  }
+
+  .login-card input {
+    font-size: 14px;
+  }
+}
+/* SmartHostel logo - Black */
+.login-card h1 {
+  background: none;
+  -webkit-text-fill-color: #111827;
+  color: #111827;
+}
+/* =========================================
+   FIND YOUR ROOM - LEGEND ALIGNMENT
+   ========================================= */
+
+.room-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 26px 0 24px;
+  padding: 0 8px;
+  gap: 12px;
+}
+
+.room-status > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  flex: 1;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Dots */
+.room-status .dot {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Available */
+.room-status .dot.available {
+  background: #14b8a6;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.12);
+}
+
+/* Occupied */
+.room-status .dot.occupied {
+  background: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.10);
+}
+
+/* Pending */
+.room-status .dot.pending {
+  background: #f59e0b;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.10);
+}
+
+
+/* =========================================
+   VIEW ROOMS BUTTON
+   ========================================= */
+
+.card-btn {
+  width: 100%;
+  height: 58px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0891b2, #164e63);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(8, 145, 178, 0.25);
+}
+
+.card-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+  .room-status {
+    gap: 6px;
+    padding: 0;
+  }
+
+  .room-status > div {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .room-status .dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+  }
+
+  .card-btn {
+    height: 54px;
+    border-radius: 14px;
+  }
+}
+/* View Rooms - Dark Graphite */
+.card-btn {
+  background: #343a40 !important;
+  color: #ffffff !important;
+  border: none;
+  box-shadow: none;
+}
+
+.card-btn:hover {
+  background: #252a2e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+}
+
+.card-btn:active {
+  background: #1f2327 !important;
+  transform: translateY(0);
+}
